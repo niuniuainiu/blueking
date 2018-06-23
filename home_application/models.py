@@ -9,4 +9,16 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 See the License for the specific language governing permissions and limitations under the License.
 """
 
-# from django.db import models
+from django.db import models
+class TestModel1(models.Model):
+    name = models.CharField(verbose_name=u"组织名字",max_length=64,unique=True)
+    foundtime = models.DateTimeField(verbose_name=u"建立时间",auto_now_add=True)
+    modifier = models.CharField(verbose_name=u"建立用户", max_length=64)
+    if_delete = models.BooleanField(verbose_name=u"是否删除", default=False)
+
+class TestModel2(models.Model):
+    name = models.CharField(verbose_name=u"组织名字",max_length=64,unique=True)
+    foundtime = models.DateTimeField(verbose_name=u"建立时间",auto_now_add=True)
+    modifier = models.CharField(verbose_name=u"建立用户", max_length=64)
+    if_delete = models.BooleanField(verbose_name=u"是否删除", default=False)
+
